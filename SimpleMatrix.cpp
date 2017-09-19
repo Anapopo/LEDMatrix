@@ -37,16 +37,26 @@ public:
                     count++;
         return count;
     }
+    void transform() {
+        //for (int i=0;i<8;i++)
+        //    for (int j=0;j<8;j++)
+
+    }
 
     //重载<<符号
     friend ostream& operator<<(ostream& out, SimpleMatrix &mat)
-    {   
+    {
         //printf();
-        out << "SimpleMatrix (" << mat.rows << "X" << mat.columns << ")" << endl;
+        out << "SimpleMatrix (" << mat.rows << "X" << mat.columns << ") Points(" << mat.getElementCount() << ")" << endl;
         for (int i = 0; i < mat.rows; i++)
         {
             for (int j = 0; j < mat.columns; j++)
-                out << setw(4) << mat.element[i][j];
+            {
+                if (mat.element[i][j] == 0) out << setw(2) << "\033[37m□  \033[0m";
+                //printf(" The ......\n");
+                if (mat.element[i][j] == 1) out << setw(2) << "\033[32m■  \033[0m";
+            }
+                
             out << endl;
         }
         return out;

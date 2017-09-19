@@ -69,7 +69,7 @@ public:
 
     int getX() { return posX; }
     int getY() { return posY; }
-    bool getRed() { return boolRGB[0]; }
-    bool getGreen() { return boolRGB[1]; }
-    bool getBlue() { return boolRGB[2]; }
+    bool hasRed() { return boolRGB[0]; }
+    bool hasGreen() { return boolRGB[1]; }
+    bool hasBlue() { return boolRGB[2]; }
 };
